@@ -1,0 +1,39 @@
+/* Connection */
+
+.About{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+.shop_img{
+  width: 50%;
+  float: left;
+  /* padding-left: 20px; */
+}
+.shop_story{
+  width: 50%;
+  float: right;
+  max-width: 500px;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px){
+     .About{
+      display:flex; 
+      flex-direction:column;
+      justify-content:center;
+      align-items: center;
+  }
+    .shop_img{
+        margin: auto;
+        display: flex;
+        justify-content:center;
+}
+    .shop_story{
+        margin: auto 50px;
+        max-width: 800px;
+        padding-top: 20px;
+        text-align:start;
+}
+}
