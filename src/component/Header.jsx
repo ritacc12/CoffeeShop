@@ -20,8 +20,9 @@ export default function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/news">最新消息</Nav.Link>
-            <Nav.Link href="/about">門市資訊</Nav.Link>
-            <Nav.Link href="/connect">關於我們</Nav.Link>
+            <Nav.Link href="/shop">門市資訊</Nav.Link>
+            <Nav.Link href="/menu">美味佳餚</Nav.Link>
+            <Nav.Link href="/about">關於我們</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
