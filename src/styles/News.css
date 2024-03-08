@@ -1,0 +1,25 @@
+/* News */
+
+.News{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center; 
+}
+
+.New_item{
+  width: 700px;
+  max-width: 1200px;
+}
+
+.item_title{
+  font-size: large;
+  font-weight: 700;
+}
+
+.New-pic{
+  object-fit: fill;
+  height: 400px;  
+}
