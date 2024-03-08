@@ -1,0 +1,9 @@
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.me-auto{
+  justify-content: flex-end;
+}
