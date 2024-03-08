@@ -15,7 +15,7 @@ const Menu = () => {
       <Title title="Menu" />
 
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-        <Row className="Menu" style={{ marginTop: "60px" }}>
+        <Row className="Menu" style={{ marginTop: "60px", marginLeft: "20px" }}>
           <Col md={2}>
             <Nav
               variant="pills"
@@ -31,7 +31,7 @@ const Menu = () => {
             </Nav>
           </Col>
           <Col xs={12} md={10}>
-            <Tab.Content>
+            <Tab.Content style={{ marginRight: "40px" }}>
               <Tab.Pane eventKey="first">
                 {" "}
                 <div className="CardContainer">
