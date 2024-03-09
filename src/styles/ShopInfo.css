@@ -2,46 +2,86 @@
 .AboutShop{
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  margin-top: 80px;
+  justify-content: center;
+  margin-top: 40px;
   height: 60vh;
 }
 
 .Map{
-  width: 60%;
-  margin-left: 10px;
+  width: 50%;
+  margin-left: 0 20px;
+  height: 45vh;
 }
+
+.map{
+  /* border: 2px solid green; */
+  width: 650px;
+  height: 45vh;
+}
+
 .Info{
   font-family: "PT Serif", serif;
   font-weight: 600;
-  width: 40%;
-  margin: 0px 20px;
-  max-width: 400px;
+  width: 50%;
+  max-width: 500px;
   text-align: left;
 }
 
 .Info_item{
-    padding-top: 10px;
-    padding-left:10px ;
+    padding-top: 30px;
+    padding-left:80px ;
+    margin-left: 40px;
+  }
+
+  .address, .phone, .email ,.time{
+    padding: 10px;
   }
 
   @media screen and (max-width: 768px){
 
       .AboutShop{
+        margin-top: 60px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 100vh; 
-      }
-      #map{
-       display: flex;
-       justify-content: flex-start;
-       width: 200px;
+        height: 90vh; 
       }
      
+     
       .Info{
+        width: 100%;
+        height: 50%;
+        text-align: left;
         display: flex;
-       justify-content: flex-end;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px auto;
+      }
+      .Info_item{
+        padding: 0px;
+        margin: 20px;
+        width: 300px;
       }
 
+      .address, .phone, .email ,.time{
+        padding: 10px;
+        width: 300px;
+      }
+      .address{
+        word-wrap:break-word;
+      }
+
+      .Map{
+        margin-top: 80px;
+        justify-content: center;
+      }
+      .mapContainer{
+       /* margin: 30px; */
+       margin: 0 20%;
+      }
+      .map{
+        max-width: 300px;
+      }
   }
+
+  

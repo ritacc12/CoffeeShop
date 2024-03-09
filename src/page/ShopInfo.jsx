@@ -18,7 +18,6 @@ export default function ShopInfo() {
               <br />
               No. 296, Section 2, Moon Road, Sun District, New Taipei City 220
             </li>
-            <br />
             <li className="time">
               Opening hours:
               <br />
@@ -28,9 +27,7 @@ export default function ShopInfo() {
               <br />
               Sunday: 10am - 6pm
             </li>
-            <br />
             <li className="phone">Tel: 123-456-7890</li>
-            <br />
             <li className="email">Email: Jcoffee@mysite.com</li>
           </ul>
         </div>
