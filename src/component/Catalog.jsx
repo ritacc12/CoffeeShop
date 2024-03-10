@@ -14,7 +14,7 @@ export default function Catalog() {
 
           <Card.Body>
             <Card.Text className="pt-serif-bold-italic">INTRODUCTION</Card.Text>
-            <a href="/connect" className="stretched-link"></a>
+            <a href="/about" className="stretched-link"></a>
           </Card.Body>
         </Card>
 
