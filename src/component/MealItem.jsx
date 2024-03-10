@@ -5,7 +5,8 @@ export default function MealItem({ id, title, price, image }) {
     <>
       <Card
         style={{
-          width: "18rem",
+          width: "16rem",
+          margin: "10px",
         }}
         id={id}
       >
