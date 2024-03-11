@@ -53,12 +53,13 @@ ol,ul{
 
 /* Activity */
 .activities {
-margin-top: 0px;
- padding-top: 50px;
+  margin-top: 60px;
+ padding-left: 40px;
+ padding-right: 40px;
 }
 
 .activity-pic{
-  height: 70vh;
+  height: 60vh;
 }
 
 .activity-title, .activity-description{
@@ -143,6 +144,20 @@ margin-top: 0px;
   margin: auto;
 }
 
+/* map */
+
+/* .Location{
+  border: 2px solid;
+  width: 650px;
+  height: 45vh;
+} */
+
+/* .map{
+  border: 2px solid green;
+  width: 650px;
+  height: 45vh;
+} */
+
 @media screen and (max-width: 768px){
 
       /* Activity */
@@ -159,7 +174,18 @@ margin-top: 0px;
         object-fit: fill;
         height: 200px;  
       }
+
+      .Map{
+        margin: 0;
+      }
       
+      .map{
+        width: 450px;
+        height: 45vh;
+        margin: 0;
+        display: flex;
+        justify-content: center; 
+      }
 }
 
 
