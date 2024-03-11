@@ -2,6 +2,8 @@ import Matcha from "/pictures/matcha.jpg";
 import Pancake from "/pictures/pancake.jpg";
 import StrawBerry from "/pictures/strawberry.jpg";
 import CheeseCake from "/pictures/cheeseCake.jpg";
+import steaksandwich from "/pictures/steaksandwich.jpg";
+import avocadosandwich from "/pictures/avocadosandwich.jpg";
 
 export const FOODS = [
   {
@@ -28,5 +30,17 @@ export const FOODS = [
     title: "Cheese Cake ",
     image: CheeseCake,
     price: 90,
+  },
+  {
+    id: 5,
+    title: "Steak Sandwich ",
+    image: steaksandwich,
+    price: 120,
+  },
+  {
+    id: 6,
+    title: "Avocado Sandwich ",
+    image: avocadosandwich,
+    price: 110,
   },
 ];
