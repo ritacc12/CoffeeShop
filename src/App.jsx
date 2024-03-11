@@ -8,6 +8,7 @@ import News from "./page/News.jsx";
 import About from "./page/About.jsx";
 import Footer from "./component/Footer.jsx";
 import Menu from "./page/Menu.jsx";
+import Error from "./page/Error.jsx";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Layout />}></Route>
+        <Route path="/" element={<Layout />} errorElement={<Error />}></Route>
         <Route path="/news" element={<News />}></Route>
         <Route path="/shop" element={<ShopInfo />}></Route>
         <Route path="/about" element={<About />}></Route>
