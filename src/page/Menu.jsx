@@ -7,9 +7,31 @@ import Title from "../component/Title.jsx";
 import { DUMMY_DRINKS } from "../assets/drink.js";
 import { FOODS } from "../assets/food.js";
 
-import "../styles/Meal.css";
+const Menu = ({ onAddItemToCart }) => {
+  // const drink = DUMMY_DRINKS.map(function (item, index, array) {
+  //   if (index < 6) {
+  //     return item;
+  //   }
+  // });
+  // const food = DUMMY_DRINKS.map(function (item, index, array) {
+  //   if (index > 6) {
+  //     return item;
+  //   }
+  // });
+  const drink = DUMMY_DRINKS.filter(function (item, index, array) {
+    if (index < 6) {
+      return item;
+    }
+  });
+  //console.log(drink);
 
-const Menu = () => {
+  const food = DUMMY_DRINKS.filter(function (item, index, array) {
+    if (index > 5) {
+      return item;
+    }
+  });
+  console.log(food);
+
   return (
     <>
       <Title title="Menu" />
@@ -17,7 +39,11 @@ const Menu = () => {
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
         <Row
           className="Menu"
-          style={{ marginTop: "60px", marginLeft: "20px", marginRight: "20px" }}
+          style={{
+            marginTop: "60px",
+            marginLeft: "20px",
+            marginRight: "20px",
+          }}
         >
           <Col md={2} style={{ display: "flex", justifyContent: "center" }}>
             <Nav variant="pills" className="flex-column">
@@ -34,14 +60,12 @@ const Menu = () => {
               <Tab.Pane eventKey="first">
                 {" "}
                 <div className="CardContainer">
-                  {DUMMY_DRINKS.map((product) => {
+                  {drink.map((product) => {
                     return (
                       <MealItem
-                        key={product.id}
-                        title={product.title}
-                        image={product.image}
-                        price={product.price}
-                        aria-labelledby="tab-drink"
+                        {...product}
+                        key={product.index}
+                        onAddToCart={onAddItemToCart}
                       />
                     );
                   })}
@@ -50,13 +74,12 @@ const Menu = () => {
               <Tab.Pane eventKey="second">
                 {" "}
                 <div className="CardContainer">
-                  {FOODS.map((item) => {
+                  {food.map((item) => {
                     return (
                       <MealItem
+                        {...item}
                         key={item.id}
-                        title={item.title}
-                        image={item.image}
-                        price={item.price}
+                        onAddToCart={onAddItemToCart}
                       />
                     );
                   })}
