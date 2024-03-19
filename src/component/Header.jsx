@@ -18,14 +18,48 @@ export default function Header({ cart, onUpdateCartItemQuantity }) {
     modal.current.open();
   }
 
-  let modalActions = <button>Close</button>;
+  let modalActions = (
+    <button
+      style={{
+        backgroundColor: "#9BC0D9",
+        marginRight: "10px",
+        borderRadius: "5px",
+        borderColor: "white",
+        color: "white",
+        fontFamily: "PT Serif, serif",
+      }}
+    >
+      Close
+    </button>
+  );
 
   if (cartQuantity > 0) {
     modalActions = (
-      <>
-        <button>Close</button>
-        <button>Checkout</button>
-      </>
+      <div style={{ display: "flex", justifyContent: "right" }}>
+        <button
+          style={{
+            backgroundColor: "#9BC0D9",
+            marginRight: "10px",
+            borderRadius: "5px",
+            borderColor: "white",
+            color: "white",
+            fontFamily: "PT Serif, serif",
+          }}
+        >
+          Close
+        </button>
+        <button
+          style={{
+            backgroundColor: "#F06A8A",
+            borderRadius: "5px",
+            borderColor: "white",
+            color: "white",
+            fontFamily: "PT Serif, serif",
+          }}
+        >
+          Checkout
+        </button>
+      </div>
     );
   }
 
@@ -53,14 +87,23 @@ export default function Header({ cart, onUpdateCartItemQuantity }) {
             <Nav className="me-auto">
               <Nav.Link href="/news">最新消息</Nav.Link>
               <Nav.Link href="/shop">門市資訊</Nav.Link>
-              <Nav.Link href="/menu">美味佳餚</Nav.Link>
+              <Nav.Link href="/reservation">線上訂餐</Nav.Link>
               <Nav.Link href="/about">關於我們</Nav.Link>
             </Nav>
-            <span>
-              <button className="CartBtn" onClick={handleOpenCartClick}>
+            <div className="navCart">
+              <button className="cartLink" onClick={handleOpenCartClick}>
+                <img
+                  src="/pictures/cart.svg"
+                  alt="cart"
+                  style={{
+                    marginRight: "10px",
+                    width: "20px",
+                    height: "20px",
+                  }}
+                ></img>
                 Cart({cartQuantity})
               </button>
-            </span>
+            </div>
           </Navbar.Collapse>
         </Container>
         <Outlet />
