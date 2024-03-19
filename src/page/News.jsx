@@ -6,17 +6,33 @@ import { ListGroup, Tab } from "react-bootstrap";
 export default function News() {
   return (
     <>
-      <Title title="最新消息" />
+      <Title title="最新消息" ENGTitle="Latest News" />
+      {/* <p>Latest News</p> */}
       <div className="News">
         <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
           <ListGroup defaultActiveKey="#link1" className="listGroup">
-            <ListGroup.Item action variant="light" href="#link1">
+            <ListGroup.Item
+              action
+              variant="light"
+              href="#link1"
+              className="ListGroupTitle"
+            >
               夜貓咖啡樂
             </ListGroup.Item>
-            <ListGroup.Item action variant="light" href="#link2">
+            <ListGroup.Item
+              action
+              variant="light"
+              href="#link2"
+              className="ListGroupTitle"
+            >
               週歡咖聚樂
             </ListGroup.Item>
-            <ListGroup.Item action variant="light" href="#link3">
+            <ListGroup.Item
+              action
+              variant="light"
+              href="#link3"
+              className="ListGroupTitle"
+            >
               品味午茶樂
             </ListGroup.Item>
           </ListGroup>

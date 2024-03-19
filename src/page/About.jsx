@@ -4,7 +4,7 @@ import "../styles/About.css";
 export default function About() {
   return (
     <>
-      <Title title="關於我們"></Title>
+      <Title title="關於我們" ENGTitle="About Us"></Title>
 
       <div className="About">
         <div className="shop_img">

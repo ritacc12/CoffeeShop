@@ -5,7 +5,7 @@ import "../styles/ShopInfo.css";
 export default function ShopInfo() {
   return (
     <>
-      <Title title="門市資訊"></Title>
+      <Title title="門市資訊" ENGTitle="Shop Information"></Title>
 
       <div className="AboutShop">
         <div className="Map">

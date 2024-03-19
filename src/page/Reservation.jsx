@@ -25,7 +25,7 @@ const Reservation = ({
 
   return (
     <>
-      <Title title="線上訂餐" />
+      <Title title="線上訂餐" ENGTitle="Online Booking" />
 
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
         <Row
