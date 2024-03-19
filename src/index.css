@@ -5,12 +5,6 @@
   font-style: normal;
 }
 
-.pt-serif-regular {
-  font-family: "PT Serif", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .pt-serif-bold {
   font-family: "PT Serif", serif;
   font-weight: 700;
@@ -65,6 +59,12 @@ ol,ul{
 .activity-title, .activity-description{
   color: #ffffff;
   text-align: center;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #F2858E;
+  width:auto;
+  
 }
 
 
