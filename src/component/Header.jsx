@@ -85,10 +85,18 @@ export default function Header({ cart, onUpdateCartItemQuantity }) {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/news">最新消息</Nav.Link>
-              <Nav.Link href="/shop">門市資訊</Nav.Link>
-              <Nav.Link href="/reservation">線上訂餐</Nav.Link>
-              <Nav.Link href="/about">關於我們</Nav.Link>
+              <Nav.Link href="/news" className="NavTitle">
+                最新消息
+              </Nav.Link>
+              <Nav.Link href="/shop" className="NavTitle">
+                門市資訊
+              </Nav.Link>
+              <Nav.Link href="/reservation" className="NavTitle">
+                線上訂餐
+              </Nav.Link>
+              <Nav.Link href="/about" className="NavTitle">
+                關於我們
+              </Nav.Link>
             </Nav>
             <div className="navCart">
               <button className="cartLink" onClick={handleOpenCartClick}>
