@@ -10,6 +10,9 @@
 }
 .Nav-item{
   width: 200px;
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .CardContainer{
@@ -23,10 +26,42 @@
   height: 200px;
 }
 .mealTitle{
-  font-size: 0.5rem;
   text-align: center;
   word-wrap:break-word;
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: italic;
 }
+.mealPrice, .ItemQuantity{
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.mealPrice{
+  margin-bottom: 10px;
+}
+.cardBody{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item-actions{
+  display: flex;
+  justify-content: center;
+}
+
+.CartBtn{
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 30px;
+  padding: 0;
+  background-color:#F4EEED;
+  border-radius: 5px;
+  border: #D9D9D9 0.5px solid;
+}
+
 
 @media screen and (max-width: 768px){
       .Nav-item{
