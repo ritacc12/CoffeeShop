@@ -60,11 +60,12 @@ ol,ul{
   color: #ffffff;
   text-align: center;
   font-family: "PT Serif", serif;
-  font-weight: 400;
-  font-style: normal;
-  background-color: #F2858E;
-  width:auto;
-  
+  font-weight: 700;
+  font-style: normal;  
+  text-align: center;
+  border-radius: 5px;
+  padding:5px;
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 
@@ -151,6 +152,12 @@ ol,ul{
 .News_title{
   margin: auto;
 }
+.ENG_title{
+  margin: auto;
+  font-size: 18px;
+  padding-top: 5px;
+}
+
 
 @media screen and (max-width: 768px){
 
@@ -181,10 +188,6 @@ ol,ul{
         justify-content: center; 
       }
 }
-
-/* .CartBtn{
-  display: none;
-} */
 
 
 
