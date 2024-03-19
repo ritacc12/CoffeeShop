@@ -48,8 +48,8 @@ ol,ul{
 /* Activity */
 .activities {
   margin-top: 60px;
- padding-left: 40px;
- padding-right: 40px;
+ padding-left: 100px;
+ padding-right: 100px;
 }
 
 .activity-pic{
@@ -162,10 +162,32 @@ ol,ul{
 @media screen and (max-width: 768px){
 
       /* Activity */
+          .activities {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
       .activity-pic{
-      height: 40vh;
+      height: 30vh;
     }
 
+    .activity-title{
+      font-size: 12px;
+    }
+    .activity-description{
+      font-size: 10px;
+    }
+
+    /* Catalog */
+    
+    .Catalog{
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+    }
+
+    .catalog-item{
+      width: 16rem;
+    }
       /* News */
         .New_item{
         width: 300px;
