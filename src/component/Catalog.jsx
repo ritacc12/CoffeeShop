@@ -13,7 +13,9 @@ export default function Catalog() {
           ></Card.Img>
 
           <Card.Body>
-            <Card.Text className="pt-serif-bold-italic">INTRODUCTION</Card.Text>
+            <Card.Text className="cardText pt-serif-bold-italic">
+              INTRODUCTION
+            </Card.Text>
             <a href="/about" className="stretched-link"></a>
           </Card.Body>
         </Card>
@@ -25,8 +27,10 @@ export default function Catalog() {
             alt="introduction"
           ></Card.Img>
           <Card.Body>
-            <Card.Text className="pt-serif-bold-italic">MENU</Card.Text>
-            <a href="/menu" className="stretched-link"></a>
+            <Card.Text className="cardText pt-serif-bold-italic">
+              ORDER
+            </Card.Text>
+            <a href="/reservation" className="stretched-link"></a>
           </Card.Body>
         </Card>
       </div>
