@@ -7,10 +7,10 @@ import ShopInfo from "./page/ShopInfo.jsx";
 import News from "./page/News.jsx";
 import About from "./page/About.jsx";
 import Footer from "./component/Footer.jsx";
-import Menu from "./page/Menu.jsx";
 import Error from "./page/Error.jsx";
 import { useState } from "react";
 import { DUMMY_DRINKS } from "./assets/drink.js";
+import Reservation from "./page/Reservation.jsx";
 //import CartContextProvider from "./store/CartContext.jsx";
 
 function App() {
@@ -41,7 +41,8 @@ function App() {
           price: product.price,
           quantity: 1,
         });
-        console.log(id, product.title);
+        // alert(`${product.title} 已加入購物車`);
+        //console.log(id, product.title);
       }
 
       return {
@@ -50,6 +51,30 @@ function App() {
     });
   }
 
+  function handleDecreaseItemToCart(id) {
+    setShoppingCart((prevShoppingCart) => {
+      const updatedItems = [...prevShoppingCart.items];
+
+      const existingCartItemIndex = updatedItems.findIndex(
+        (cartItem) => cartItem.id === id
+      );
+      const existingCartItem = updatedItems[existingCartItemIndex];
+
+      if (existingCartItem) {
+        const updatedItem = {
+          ...existingCartItem,
+          quantity:
+            existingCartItem.quantity <= 0 ? 0 : existingCartItem.quantity - 1,
+        };
+        console.log(updatedItem.quantity);
+        updatedItems[existingCartItemIndex] = updatedItem;
+      }
+
+      return {
+        items: updatedItems,
+      };
+    });
+  }
   function handleUpdateCartItemQuantity(productId, amount) {
     setShoppingCart((prevShoppingCart) => {
       const updatedItems = [...prevShoppingCart.items];
@@ -87,9 +112,16 @@ function App() {
         <Route path="/news" element={<News />}></Route>
         <Route path="/shop" element={<ShopInfo />}></Route>
         <Route path="/about" element={<About />}></Route>
+
         <Route
-          path="/menu"
-          element={<Menu onAddItemToCart={handleAddItemToCart} />}
+          path="/reservation"
+          element={
+            <Reservation
+              // onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
+              onAddItemToCart={handleAddItemToCart}
+              onDecreaseItem={handleDecreaseItemToCart}
+            />
+          }
         ></Route>
       </Routes>
 
