@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../store/CartContext.jsx";
+import "../styles/Cart.css";
 
 export default function Cart({ items, onUpdateItemQuantity }) {
   //const { items, updateItemQuantity } = useContext(CartContext);
@@ -12,24 +13,30 @@ export default function Cart({ items, onUpdateItemQuantity }) {
 
   return (
     <div id="cart">
-      {items.length === 0 && <p>No items in cart!</p>}
+      {items.length === 0 && <p className="cartList">No items in cart!</p>}
       {items.length > 0 && (
-        <ul id="cart-items">
+        <ul className="cart-items">
           {items.map((item) => {
             const formattedPrice = `$${item.price.toFixed(2)}`;
 
             return (
-              <li key={item.id}>
+              <li key={item.id} className="cartList">
                 <div>
-                  <span>{item.title}</span>
-                  <span> ({formattedPrice})</span>
+                  <span className="ItemTitle">{item.title}</span>
+                  <span className="ItemPrice"> ({formattedPrice})</span>
                 </div>
                 <div className="cart-item-actions">
-                  <button onClick={() => onUpdateItemQuantity(item.id, -1)}>
+                  <button
+                    className="CartBtn"
+                    onClick={() => onUpdateItemQuantity(item.id, -1)}
+                  >
                     -
                   </button>
-                  <span>{item.quantity}</span>
-                  <button onClick={() => onUpdateItemQuantity(item.id, 1)}>
+                  <span className="ItemQuantity">{item.quantity}</span>
+                  <button
+                    className="CartBtn"
+                    onClick={() => onUpdateItemQuantity(item.id, 1)}
+                  >
                     +
                   </button>
                 </div>
@@ -38,7 +45,7 @@ export default function Cart({ items, onUpdateItemQuantity }) {
           })}
         </ul>
       )}
-      <p id="cart-total-price">
+      <p className="cart-total-price">
         Cart Total: <strong>{formattedTotalPrice}</strong>
       </p>
     </div>
