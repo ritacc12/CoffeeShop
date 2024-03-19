@@ -7,3 +7,15 @@
 .me-auto{
   justify-content: flex-end;
 }
+
+.cartLink{
+  border: 0;
+  background-color: #D7D7D9;
+  border-radius: 2px;
+  width: 100px;
+}
+
+.cartLink:hover{
+  background-color: #F2858E;
+}
+
