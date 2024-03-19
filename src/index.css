@@ -79,14 +79,17 @@ ol,ul{
 }
 .catalog-item{
   margin-top: 20px;
-  width: 60%;
+  width: 40%;
   height: 60vh;
-  margin: 10px;
+  margin: 10px 30px 10px 30px;
 }
  .catalog-img{
   object-fit: contain;
  }  
 
+ .cardText{
+  margin-bottom: 0;
+ }
 /* Footer */
 
 .Footer{
@@ -118,47 +121,36 @@ ol,ul{
   border-radius: 5px;
   border: 1px solid transparent;
   color: #ffffff;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
-  background-color: #A6637C;
+  background-color: #F2858E;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 .subscribeBtn:hover {
-  border-color: #FF9933;
+  border-color : white;
 }
-.subscribeBt:focus,
-.subscribeBt:focus-visible {
+.subscribeBtn:focus,
+.subscribeBtn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
 /* Title */
 .title{
   margin-top: 50px;
-  background-image: url("/pictures/titleBackground.jpg");
-  background-size: cover;
+  background-image: url("/pictures/background.jpg");
+  background-size: contain;
   height: 200px;
   display: flex;
   justify-items: center;
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: italic;
 }
 
 .News_title{
   margin: auto;
 }
-
-/* map */
-
-/* .Location{
-  border: 2px solid;
-  width: 650px;
-  height: 45vh;
-} */
-
-/* .map{
-  border: 2px solid green;
-  width: 650px;
-  height: 45vh;
-} */
 
 @media screen and (max-width: 768px){
 
@@ -189,6 +181,10 @@ ol,ul{
         justify-content: center; 
       }
 }
+
+/* .CartBtn{
+  display: none;
+} */
 
 
 
