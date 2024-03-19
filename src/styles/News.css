@@ -15,6 +15,11 @@
   margin: 20px 20px;
   width: 60%;
 }
+.ListGroupTitle{
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .New_item{
   width: 100%;
@@ -26,6 +31,8 @@
 .item_title{
   font-size: large;
   font-weight: 700;
+  font-family: "PT Serif", serif;
+  font-style: normal;
 }
 
 .New-pic{
