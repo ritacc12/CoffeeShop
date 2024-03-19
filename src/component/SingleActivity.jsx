@@ -17,7 +17,9 @@ export default function SingleActivity({
         <Card.Img variant="top" src={img} className="New-pic" />
         <Card.Body>
           <Card.Text>
-            <span style={{ whiteSpace: "pre-wrap" }}>{description}</span>
+            <span className="activityDesc" style={{ whiteSpace: "pre-wrap" }}>
+              {description}
+            </span>
           </Card.Text>
         </Card.Body>
       </Card>
