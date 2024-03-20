@@ -5,7 +5,6 @@ import Tab from "react-bootstrap/Tab";
 import MealItem from "../component/MealItem.jsx";
 import Title from "../component/Title.jsx";
 import { DUMMY_DRINKS } from "../assets/drink.js";
-import { FOODS } from "../assets/food.js";
 
 const Menu = ({ onAddItemToCart }) => {
   // const drink = DUMMY_DRINKS.map(function (item, index, array) {

@@ -1,6 +1,4 @@
 import Card from "react-bootstrap/Card";
-import { CartContext } from "../store/CartContext.jsx";
-import { useContext, useState } from "react";
 import "../styles/Meal.css";
 
 export default function MealItem({
