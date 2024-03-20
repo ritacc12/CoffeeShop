@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Outlet, Link } from "react-router-dom";
 import "../styles/Header.css";
 import CartModal from "./CartModal.jsx";
+import { useRef } from "react";
 
 export default function Header({ cart, onUpdateCartItemQuantity }) {
   const modal = useRef();
