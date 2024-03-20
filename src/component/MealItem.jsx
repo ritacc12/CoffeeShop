@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import "../styles/Meal.css";
+import { useState } from "react";
 
 export default function MealItem({
   id,
