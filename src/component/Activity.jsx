@@ -4,7 +4,7 @@ export default function Activity() {
   return (
     <Carousel className="activities">
       <Carousel.Item data-bs-interval="3000">
-        <a href="http://localhost:3000/news">
+        <a href="/news">
           <img
             className="activity-pic d-block w-100 rounded"
             src="/pictures/nightCoffee.jpg"
@@ -20,7 +20,7 @@ export default function Activity() {
       </Carousel.Item>
 
       <Carousel.Item data-bs-interval="3000">
-        <a href="http://localhost:3000/news">
+        <a href="/news">
           <img
             className="activity-pic d-block w-100 rounded "
             src="/pictures/teaTime.jpg"
@@ -36,7 +36,7 @@ export default function Activity() {
       </Carousel.Item>
 
       <Carousel.Item data-bs-interval="3000">
-        <a href="http://localhost:3000/news">
+        <a href="/news">
           <img
             className="activity-pic d-block w-100 rounded "
             src="/pictures/Flower.jpg"
