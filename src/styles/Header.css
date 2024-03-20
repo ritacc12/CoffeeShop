@@ -13,6 +13,9 @@
   background-color: #D7D7D9;
   border-radius: 2px;
   width: 100px;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .cartLink:hover{
