@@ -59,14 +59,14 @@ ol,ul{
 .activity-title, .activity-description{
   color: #ffffff;
   text-align: center;
-  font-family: "PT Serif", serif;
+  /* font-family: "PT Serif", serif; */
   font-weight: 700;
   font-style: normal;  
   text-align: center;
   border-radius: 5px;
   padding:5px;
-  width: max-content;
-  text-shadow: gray 0.2em 0.2em 0.2em;
+  
+  text-shadow: black 0.1em 0.1em 0.2em ;
 }
 
 
