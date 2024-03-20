@@ -23,7 +23,7 @@ export default function Activity() {
         <a href="/news">
           <img
             className="activity-pic d-block w-100 rounded "
-            src="/pictures/teaTime.jpg"
+            src="/pictures/share.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
