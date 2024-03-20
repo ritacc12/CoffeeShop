@@ -19,6 +19,7 @@
     "@react-google-maps/api": "^2.19.3",
     "@vis.gl/react-google-maps": "^0.7.1",
     "bootstrap": "^5.3.3",
+    "env-cmd": "^10.1.0",
     "google-map-react": "^2.2.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
