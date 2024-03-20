@@ -65,7 +65,8 @@ ol,ul{
   text-align: center;
   border-radius: 5px;
   padding:5px;
-  text-shadow: black 0.1em 0.1em 0.2em;
+  width: max-content;
+  text-shadow: gray 0.2em 0.2em 0.2em;
 }
 
 
@@ -147,6 +148,7 @@ ol,ul{
   font-family: "PT Serif", serif;
   font-weight: 700;
   font-style: italic;
+  text-shadow: gray 0.1em 0.1em 0.2em;
 }
 
 .News_title{
