@@ -11,7 +11,6 @@ import Error from "./page/Error.jsx";
 import { useState } from "react";
 import { DUMMY_DRINKS } from "./assets/drink.js";
 import Reservation from "./page/Reservation.jsx";
-//import CartContextProvider from "./store/CartContext.jsx";
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState({
