@@ -1,19 +1,10 @@
 ### J CoffeeShop
 
-The website is built using bootstrap x React and allows users to view details of Coffee Shop including the latest events, menu and store information.
+The website was built using bootstrap x React and allows users to view details about the Coffee Shop including latest events, menus, store information and online ordering.
 
-## Screenshot
+deploy via Zeabur (https://jcoffeedemo.zeabur.app)
 
-- HomePage
-  ![home](https://github.com/ritacc12/CoffeeShop/blob/main/public/screenshot/J%20coffee%20Home%20page.png)
-- News
-  ![News](https://github.com/ritacc12/CoffeeShop/blob/main/public/screenshot/J%20coffee%20-%20news.png)
-- About
-  ![About](https://github.com/ritacc12/CoffeeShop/blob/main/public/screenshot/J%20coffee%20-%20about.png)
-- Shop Information
-  ![Shop](https://github.com/ritacc12/CoffeeShop/blob/main/public/screenshot/J%20coffee%20-%20shop.png)
-- Menu
-  ![Menu](https://github.com/ritacc12/CoffeeShop/blob/main/public/screenshot/J%20coffee%20-menu.png)
+![home](https://github.com/ritacc12/CoffeeShop/blob/main/public/screenshot/J%20coffee%20Home%20page.png)
 
 ## Installation
 
