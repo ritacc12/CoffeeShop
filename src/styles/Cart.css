@@ -5,7 +5,7 @@
 .CartTitle{
   font-family: "PT Serif", serif;
   font-weight: 700;
-  font-style: normal;
+  font-style: italic;
 }
 .cart-items{
     padding-left: 0;
@@ -61,7 +61,7 @@
     background-color: #F2858E;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 576px){
 
   #modal{
     width: 350px;
