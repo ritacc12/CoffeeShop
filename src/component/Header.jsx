@@ -16,6 +16,10 @@ export default function Header({ cart, onUpdateCartItemQuantity }) {
     modal.current.open();
   }
 
+  function handleReceivedOrder() {
+    return alert("訂單已收到！");
+  }
+
   let modalActions = (
     <button
       style={{
@@ -54,6 +58,7 @@ export default function Header({ cart, onUpdateCartItemQuantity }) {
             color: "white",
             fontFamily: "PT Serif, serif",
           }}
+          onClick={handleReceivedOrder}
         >
           Checkout
         </button>
