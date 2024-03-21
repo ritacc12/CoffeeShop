@@ -1,3 +1,4 @@
+import "../styles/Cart.css";
 export default function Cart({ items, onUpdateItemQuantity }) {
   //const { items, updateItemQuantity } = useContext(CartContext);
 
