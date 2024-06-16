@@ -118,14 +118,15 @@ ol,ul{
   border-radius: 5px;
   border: 1px solid transparent;
   color: #ffffff;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
-  background-color: #A6637C;
+  background-color: #ACB8BF;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 .subscribeBtn:hover {
-  border-color: #FF9933;
+  /* border-color: ; */
+  border: 1px solid #ffffff;
 }
 .subscribeBt:focus,
 .subscribeBt:focus-visible {
@@ -140,6 +141,7 @@ ol,ul{
   height: 200px;
   display: flex;
   justify-items: center;
+  color:#736F6C;
 }
 
 .News_title{
