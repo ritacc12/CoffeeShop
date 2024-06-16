@@ -26,6 +26,14 @@
   font-size: 0.5rem;
   text-align: center;
   word-wrap:break-word;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.mealPrice{
+  font-family: "PT Serif", serif;
+  font-style: italic;
 }
 
 @media screen and (max-width: 768px){

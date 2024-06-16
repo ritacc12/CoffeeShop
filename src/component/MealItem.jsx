@@ -1,4 +1,5 @@
 import Card from "react-bootstrap/Card";
+import "../styles/Meal.css";
 
 export default function MealItem({ title, price, image }) {
   return (
