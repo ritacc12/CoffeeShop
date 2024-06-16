@@ -4,12 +4,31 @@ import Row from "react-bootstrap/Row";
 import Tab from "react-bootstrap/Tab";
 import MealItem from "../component/MealItem.jsx";
 import Title from "../component/Title.jsx";
-import { DUMMY_DRINKS } from "../assets/drink.js";
-import { FOODS } from "../assets/food.js";
-
+import axios from "axios";
 import "../styles/Meal.css";
+import { useState, useEffect } from "react";
 
 const Menu = () => {
+  const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    const fetchMenuItems = async () => {
+      try {
+        const response = await axios.get("/api/menulist");
+        console.log("Fetched menu items:", response.data);
+        setMenuItems(response.data);
+      } catch (error) {
+        console.error("Error fetching menu items:", error.message);
+        console.error(error);
+      }
+    };
+
+    fetchMenuItems();
+  }, []);
+
+  const drinks = menuItems.filter((item) => item.id >= 1 && item.id <= 6);
+  const foods = menuItems.filter((item) => item.id >= 7 && item.id <= 10);
+
   return (
     <>
       <Title title="Menu" />
@@ -34,32 +53,35 @@ const Menu = () => {
               <Tab.Pane eventKey="first">
                 {" "}
                 <div className="CardContainer">
-                  {DUMMY_DRINKS.map((product) => {
-                    return (
+                  {menuItems.length === 0 ? (
+                    <p>Loading menu...</p>
+                  ) : (
+                    drinks.map((item) => (
                       <MealItem
-                        key={product.id}
-                        title={product.title}
-                        image={product.image}
-                        price={product.price}
-                        aria-labelledby="tab-drink"
+                        key={item.id}
+                        title={item.name}
+                        price={item.price}
+                        image={item.image}
                       />
-                    );
-                  })}
+                    ))
+                  )}
                 </div>
               </Tab.Pane>
               <Tab.Pane eventKey="second">
                 {" "}
                 <div className="CardContainer">
-                  {FOODS.map((item) => {
-                    return (
+                  {menuItems.length === 0 ? (
+                    <p>Loading menu...</p>
+                  ) : (
+                    foods.map((item) => (
                       <MealItem
                         key={item.id}
-                        title={item.title}
-                        image={item.image}
+                        title={item.name}
                         price={item.price}
+                        image={item.image}
                       />
-                    );
-                  })}
+                    ))
+                  )}
                 </div>
               </Tab.Pane>
             </Tab.Content>
