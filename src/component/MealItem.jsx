@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 
-export default function MealItem({ id, title, price, image }) {
+export default function MealItem({ title, price, image }) {
   return (
     <>
       <Card
@@ -8,7 +8,6 @@ export default function MealItem({ id, title, price, image }) {
           width: "20rem",
           margin: "10px 20px 10px 20px",
         }}
-        id={id}
       >
         <Card.Img variant="top" src={image} alt={title} className="rounded" />
         <Card.Body>
