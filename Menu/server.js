@@ -16,7 +16,7 @@ let menuList = [
   {
     id: 2,
     name: "Latte",
-    price: 70,
+    price: 80,
     image: "http://localhost:3001/image/latte.jpg",
   },
   {
@@ -66,6 +66,12 @@ let menuList = [
     name: "Steak Sandwich",
     image: "http://localhost:3001/image/steaksandwich.jpg",
     price: 150,
+  },
+  {
+    id: 11,
+    name: "Strawberry tart",
+    image: "http://localhost:3001/image/strawberry.jpg",
+    price: 120,
   },
 ];
 

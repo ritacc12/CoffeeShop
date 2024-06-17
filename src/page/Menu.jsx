@@ -27,7 +27,7 @@ const Menu = () => {
   }, []);
 
   const drinks = menuItems.filter((item) => item.id >= 1 && item.id <= 6);
-  const foods = menuItems.filter((item) => item.id >= 7 && item.id <= 10);
+  const foods = menuItems.filter((item) => item.id >= 7 && item.id <= 12);
 
   return (
     <>
