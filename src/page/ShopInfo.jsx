@@ -13,22 +13,24 @@ export default function ShopInfo() {
         </div> */}
         <div className="Info">
           <ul className="Info_item">
-            <li className="address">
+            <li className="item">
               Address:
               <br />
               No. 296, Section 2, Moon Road, Sun District, New Taipei City 220
             </li>
-            <li className="time">
+            <li className="item">
               Opening hours:
               <br />
               Mon - Fri: 9am - 8pm
               <br />
-              ​​Saturday: 9am - 7pm
+              ​​Sat: 9am - 7pm
               <br />
-              Sunday: 10am - 6pm
+              Sun: 10am - 6pm
             </li>
-            <li className="phone">Tel: 123-456-7890</li>
-            <li className="email">Email: Jcoffee@mysite.com</li>
+            <li className="item">
+              Tel: 123-456-7890 <br></br>Email: Jcoffee@mysite.com
+            </li>
+            {/* <li className="email">Email: Jcoffee@mysite.com</li> */}
           </ul>
         </div>
       </div>
