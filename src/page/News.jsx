@@ -6,7 +6,7 @@ import { ListGroup, Tab } from "react-bootstrap";
 export default function News() {
   return (
     <>
-      <Title title="最新消息" />
+      <Title title="News" />
       <div className="News">
         <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
           <ListGroup defaultActiveKey="#link1" className="listGroup">

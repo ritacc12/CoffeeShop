@@ -5,12 +5,12 @@ import "../styles/ShopInfo.css";
 export default function ShopInfo() {
   return (
     <>
-      <Title title="門市資訊"></Title>
+      <Title title="Location"></Title>
 
       <div className="AboutShop">
-        <div className="Map">
+        {/* <div className="Map">
           <Map />
-        </div>
+        </div> */}
         <div className="Info">
           <ul className="Info_item">
             <li className="address">

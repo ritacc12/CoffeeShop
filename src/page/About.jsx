@@ -4,7 +4,7 @@ import "../styles/About.css";
 export default function About() {
   return (
     <>
-      <Title title="關於我們"></Title>
+      <Title title="About J coffee"></Title>
 
       <div className="About">
         <div className="shop_img">

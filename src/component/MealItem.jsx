@@ -6,8 +6,10 @@ export default function MealItem({ title, price, image }) {
     <>
       <Card
         style={{
-          width: "20rem",
-          margin: "10px 20px 10px 20px",
+          width: "16rem",
+          margin: "10px",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         <Card.Img variant="top" src={image} alt={title} className="rounded" />
