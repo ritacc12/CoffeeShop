@@ -5,17 +5,20 @@ export default function MealItem({ title, price, image }) {
   return (
     <>
       <Card
-        style={{
-          width: "16rem",
-          margin: "10px",
-          display: "flex",
-          justifyContent: "center",
-        }}
+        className="menuItem"
+        // style={{
+        //   width: "20rem",
+        //   margin: "10px",
+        //   display: "flex",
+        //   justifyContent: "center",
+        // }}
       >
         <Card.Img variant="top" src={image} alt={title} className="rounded" />
         <Card.Body>
-          <Card.Title className="mealTitle">{title}</Card.Title>
-          <Card.Text className="mealPrice">${price}</Card.Text>
+          <div className="itemDescription">
+            <span className="mealTitle">{title}</span>
+            <p className="mealPrice">${price}</p>
+          </div>
         </Card.Body>
       </Card>
     </>
