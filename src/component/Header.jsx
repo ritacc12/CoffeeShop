@@ -18,7 +18,7 @@ export default function Header() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto noto-serif-tc">
             <Nav.Link href="/news">最新消息</Nav.Link>
             <Nav.Link href="/shop">門市資訊</Nav.Link>
             <Nav.Link href="/menu">美味佳餚</Nav.Link>
