@@ -13,7 +13,8 @@ export default function Activity() {
           <Carousel.Caption>
             <h5 className="activity-title">夜貓咖啡樂</h5>
             <p className="activity-description">
-              夜貓專享 每杯咖啡享95元 尊享夜晚咖啡時光
+              夜貓專享 每杯咖啡享95元
+              <br></br>尊享夜晚咖啡時光
             </p>
           </Carousel.Caption>
         </a>
@@ -29,7 +30,8 @@ export default function Activity() {
           <Carousel.Caption>
             <h5 className="activity-title-black">週歡咖聚樂</h5>
             <p className="activity-description-black">
-              週末限定 親朋好友共享美好時光 每杯咖啡享優惠價
+              週末限定 親朋好友共享美好時光
+              <br></br>每杯咖啡享優惠價
             </p>
           </Carousel.Caption>
         </a>
@@ -45,7 +47,7 @@ export default function Activity() {
           <Carousel.Caption>
             <h5 className="activity-title">品味午茶樂</h5>
             <p className="activity-description">
-              全新下午茶套餐 結合特色新品咖啡 享輕松悠閒下午
+              全新下午茶套餐 結合特色新品咖啡<br></br> 享輕松悠閒下午
             </p>
           </Carousel.Caption>
         </a>
