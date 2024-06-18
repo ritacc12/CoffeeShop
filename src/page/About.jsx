@@ -5,13 +5,12 @@ export default function About() {
   return (
     <>
       <Title title="About J coffee"></Title>
-
-      <div className="About">
+      <div className="About noto-serif-tc">
         <div className="shop_img">
           <img
             src="/pictures/shop.jpg"
             alt="shop"
-            style={{ height: "400px", borderRadius: "5px" }}
+            style={{ height: "400px", width: "400px", borderRadius: "5px" }}
           ></img>
         </div>
         <div className="shop_story">

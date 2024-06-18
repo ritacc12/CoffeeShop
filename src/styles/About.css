@@ -3,19 +3,20 @@
 .About{
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 40px;
 }
 .shop_img{
-  width: 50%;
+  width: 40%;
   float: left;
-  /* padding-left: 20px; */
 }
 .shop_story{
-  width: 50%;
+  width: 60%;
   float: right;
   max-width: 500px;
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px){
