@@ -5,9 +5,16 @@ export default function Catalog() {
   return (
     <>
       <div className="Catalog">
-        <Card className="catalog-item position: relative">
+        <Card
+          className="catalog-item position: relative"
+          style={{
+            width: "20rem",
+            margin: "10px 30px",
+          }}
+        >
           <Card.Img
-            className="catalog-img  d-block"
+            className="catalog-img"
+            variant="top"
             src="/pictures/story.jpg"
             alt="introduction"
           ></Card.Img>
@@ -18,7 +25,13 @@ export default function Catalog() {
           </Card.Body>
         </Card>
 
-        <Card className="catalog-item position: relative">
+        <Card
+          className="catalog-item position: relative"
+          style={{
+            width: "20rem",
+            margin: "10px 30px",
+          }}
+        >
           <Card.Img
             className="catalog-img d-block"
             src="/pictures/menu.jpg"
