@@ -23,6 +23,14 @@
   font-style: italic;
 }
 
+/* For Chinese */
+.noto-serif-tc {
+  font-family: "Noto Serif TC", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 * {
   box-sizing: border-box;
@@ -59,29 +67,34 @@ ol,ul{
 }
 
 .activity-pic{
-  height: 60vh;
+  height: 50vh;
 }
 
-.activity-title, .activity-description{
+.activity-title , .activity-description{
   color: #ffffff;
-  text-align: center;
+  text-align: right;
 }
-
+.activity-title-black, .activity-description-black{
+  color: black;
+  text-align: right;
+}
 
 /* Category */
 .Catalog{
   display: flex;
   flex-direction: row;
   padding: 20px;
+  /* margin: 20px; */
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .catalog-item{
   margin-top: 20px;
-  width: 60%;
-  height: 60vh;
-  margin: 10px;
+  width: 20rem;
+  padding-right: 20px;
+  /* height: 40vh; */
+  /* margin: 10px; */
 }
  .catalog-img{
   object-fit: contain;
