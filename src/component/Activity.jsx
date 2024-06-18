@@ -6,7 +6,7 @@ export default function Activity() {
       <Carousel.Item data-bs-interval="3000">
         <a href="http://localhost:3000/news">
           <img
-            className="activity-pic d-block w-100 rounded"
+            className="activity-pic d-block w-100 bg-contain rounded"
             src="/pictures/nightCoffee.jpg"
             alt="First slide"
           />
@@ -22,13 +22,13 @@ export default function Activity() {
       <Carousel.Item data-bs-interval="3000">
         <a href="http://localhost:3000/news">
           <img
-            className="activity-pic d-block w-100 rounded "
-            src="/pictures/teaTime.jpg"
+            className="activity-pic d-block w-100 bg-contain rounded "
+            src="/pictures/tastydessert.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h5 className="activity-title">週歡咖聚樂</h5>
-            <p className="activity-description">
+            <h5 className="activity-title-black">週歡咖聚樂</h5>
+            <p className="activity-description-black">
               週末限定 親朋好友共享美好時光 每杯咖啡享優惠價
             </p>
           </Carousel.Caption>
@@ -38,7 +38,7 @@ export default function Activity() {
       <Carousel.Item data-bs-interval="3000">
         <a href="http://localhost:3000/news">
           <img
-            className="activity-pic d-block w-100 rounded "
+            className="activity-pic d-block w-100 bg-contain rounded "
             src="/pictures/Flower.jpg"
             alt="Third slide"
           />
