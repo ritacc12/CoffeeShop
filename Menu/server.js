@@ -11,7 +11,7 @@ let menuList = [
     id: 1,
     name: "American",
     price: 60,
-    image: "http://localhost:3001/image/latte.jpg",
+    image: "http://localhost:3001/image/blackcoffee.jpg",
   },
   {
     id: 2,
