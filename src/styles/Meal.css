@@ -15,6 +15,12 @@
   font-style: italic;
 }
 
+.menuList{
+  display: flex;
+  justify-content: center;
+}
+
+/* MealItem */
 .CardContainer{
   display: flex;
   flex-wrap: wrap;
@@ -25,6 +31,14 @@
 .itemImg{
   width: 100%;
   height: 200px;
+}
+
+
+.Menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px auto;
 }
 
 .card{
@@ -39,13 +53,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.menuItem{
-  width: "20rem";
-  margin: "10px";
-  display: "flex";
-  justify-content: "center";
 }
 
 .mealTitle{
