@@ -26,42 +26,46 @@ const Menu = () => {
     fetchMenuItems();
   }, []);
 
-  const drinks = menuItems.filter((item) => item.id >= 1 && item.id <= 6);
-  const foods = menuItems.filter((item) => item.id >= 7 && item.id <= 12);
+  const drinks = menuItems.filter((item) => item.category === "drink");
+  const foods = menuItems.filter((item) => item.category === "food");
 
   return (
     <>
       <Title title="Menu" />
-      <div>
+      <div className="Menu">
         <p className="description">Drinks</p>
-        <div className="CardContainer">
-          {menuItems.length === 0 ? (
-            <p>Loading menu...</p>
-          ) : (
-            drinks.map((item) => (
-              <MealItem
-                key={item.id}
-                title={item.name}
-                price={item.price}
-                image={item.image}
-              />
-            ))
-          )}
+        <div className="menuList">
+          <div className="CardContainer">
+            {menuItems.length === 0 ? (
+              <p>Loading menu...</p>
+            ) : (
+              drinks.map((item) => (
+                <MealItem
+                  key={item.id}
+                  title={item.name}
+                  price={item.price}
+                  image={item.image}
+                />
+              ))
+            )}
+          </div>
         </div>
         <p className="description">Foods</p>
-        <div className="CardContainer">
-          {menuItems.length === 0 ? (
-            <p>Loading menu...</p>
-          ) : (
-            foods.map((item) => (
-              <MealItem
-                key={item.id}
-                title={item.name}
-                price={item.price}
-                image={item.image}
-              />
-            ))
-          )}
+        <div className="menuList">
+          <div className="CardContainer">
+            {menuItems.length === 0 ? (
+              <p>Loading menu...</p>
+            ) : (
+              foods.map((item) => (
+                <MealItem
+                  key={item.id}
+                  title={item.name}
+                  price={item.price}
+                  image={item.image}
+                />
+              ))
+            )}
+          </div>
         </div>
       </div>
     </>
