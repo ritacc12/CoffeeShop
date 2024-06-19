@@ -31,22 +31,22 @@ The menu data is stored using Node.js and served via an API, with Axios used on 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/ritacc12/CoffeeShopWebsite.git
-   cd CoffeeShopWebsite
+   git clone https://github.com/ritacc12/CoffeeShop.git
+   cd CoffeeShop
    ```
 
 2. Install dependencies for both frontend and backend:
+
+- Frontend dependencies
+
+  ```bash
+  npm install
+  ```
 
 - Backend dependencies
 
   ```bash
   cd Menu
-  npm install
-  ```
-
-- Frontend dependencies
-
-  ```bash
   npm install
   ```
 
