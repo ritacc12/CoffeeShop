@@ -5,7 +5,11 @@ const cors = require("cors");
 
 app.use(cors());
 app.use(express.static("public"));
-
+app.use(
+  cors({
+    origin: "https://jcoffeedemo.zeabur.app/",
+  })
+);
 let menuList = [
   {
     id: 1,
