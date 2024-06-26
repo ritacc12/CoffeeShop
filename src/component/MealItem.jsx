@@ -1,7 +1,17 @@
 import Card from "react-bootstrap/Card";
 import "../styles/Meal.css";
+import { useState } from "react";
 
-export default function MealItem({ title, price, image }) {
+export default function MealItem({
+  id,
+  title,
+  price,
+  image,
+  onAddToCart,
+  onDecreaseItem,
+}) {
+  const [quantity, setQuantity] = useState(0);
+
   return (
     <>
       <Card
@@ -18,6 +28,23 @@ export default function MealItem({ title, price, image }) {
           <div className="itemDescription">
             <span className="mealTitle">{title}</span>
             <p className="mealPrice">${price}</p>
+          </div>
+          <div className="cart-item-actions">
+            <button
+              className="MenuBtn"
+              onClick={() =>
+                onDecreaseItem(setQuantity(quantity <= 0 ? 0 : quantity - 1))
+              }
+            >
+              -
+            </button>
+            <span className="ItemQuantity">{quantity}</span>
+            <button
+              className="MenuBtn"
+              onClick={() => onAddToCart(id, setQuantity(quantity + 1))}
+            >
+              +
+            </button>
           </div>
         </Card.Body>
       </Card>
