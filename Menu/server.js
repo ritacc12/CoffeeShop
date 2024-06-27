@@ -2,12 +2,13 @@ const express = require("express");
 const app = express();
 const port = 3001;
 const cors = require("cors");
+const orderRoute = require("./order.js");
 
 app.use(cors());
 app.use(express.static("public"));
 app.use(
   cors({
-    origin: "https://jcoffeedemo.zeabur.app/",
+    origin: ["http://localhost:3000", "https://jcoffeedemo.zeabur.app/"],
   })
 );
 let menuList = [
@@ -100,11 +101,14 @@ let menuList = [
 app.use(express.json());
 
 app.get("/api/menulist", (req, res) => {
-  console.log("Request headers:", req.headers);
-  console.log("Received request for /api/menulist");
-  console.log("menuList:", menuList);
+  // console.log("Request headers:", req.headers);
+  //console.log("Received request for /api/menulist");
+  // console.log("menuList:", menuList);
   res.json(menuList);
 });
+
+// 使用订单相关的路由
+app.use("/api", orderRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
