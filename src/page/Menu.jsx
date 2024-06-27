@@ -64,6 +64,40 @@ const Menu = ({ onAddItemToCart }) => {
     });
   }
 
+  const handleCheckout = async () => {
+    try {
+      const orderData = shoppingCart.map((item) => ({
+        name: item.name,
+        quantity: item.quantity,
+        totalPrice,
+      }));
+
+      const response = await fetch("http://localhost:3001/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.message); // 顯示訂單成功訊息
+
+        //清空購物車
+        setShoppingCart([]);
+
+        // 更新菜單項目的初始數量為零
+        setMenuItems(menuItems.map((item) => ({ ...item, quantity: 0 })));
+      } else {
+        alert("Error during checkout:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error during checkout:", error);
+      alert("Checkout failed");
+    }
+  };
+
   const itemTotals = shoppingCart.map((item) => item.price * item.quantity);
   const totalPrice = itemTotals.reduce((acc, itemTotal) => acc + itemTotal, 0);
   const formattedTotalPrice = `$${totalPrice.toFixed(2)}`;
@@ -84,12 +118,12 @@ const Menu = ({ onAddItemToCart }) => {
                 title={item.name}
                 price={item.price}
                 image={item.image}
+                initialQuantity={item.quantity}
                 onAddToCart={() => handleAddItemToCart(item)}
                 onDecreaseItem={() => handleDecreaseItemToCart(item.id)}
               />
             ))
           )}
-          {/* </div> */}
         </div>
         <p className="description">Foods</p>
         <div className="menuList">
@@ -103,6 +137,7 @@ const Menu = ({ onAddItemToCart }) => {
                   title={item.name}
                   price={item.price}
                   image={item.image}
+                  initialQuantity={item.quantity}
                   onAddToCart={() => handleAddItemToCart(item)}
                   onDecreaseItem={() => handleDecreaseItemToCart(item.id)}
                 />
@@ -158,9 +193,11 @@ const Menu = ({ onAddItemToCart }) => {
         <p className="cart-total-price">
           Cart Total: <strong>{formattedTotalPrice}</strong>
         </p>
-        <button className="checkoutBtn" onClick={handleCheckout}>
-          Check out
-        </button>
+        {shoppingCart.length > 0 && (
+          <button className="checkoutBtn" onClick={handleCheckout}>
+            Check out
+          </button>
+        )}
       </div>
     </>
   );
