@@ -14,7 +14,7 @@ export default function MealItem({
   const [quantity, setQuantity] = useState(initialQuantity || 0); // 初始數量為父組件傳遞的初始值或者0
 
   useEffect(() => {
-    setQuantity(initialQuantity || 0);
+    setQuantity(initialQuantity);
   }, [initialQuantity]);
 
   const handleAddToCartClick = () => {
