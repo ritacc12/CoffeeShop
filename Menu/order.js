@@ -28,25 +28,45 @@ const writeOrdersToFile = (orders) => {
 };
 
 router.post("/checkout", (req, res) => {
-  const orderData = req.body; // 獲取訂單資訊
-  console.log("Received order data:", orderData);
+  const { items, totalPrice } = req.body; // 獲取訂單資訊
+  console.log("Received order data:", { items, totalPrice });
 
-  //讀取訂單數據
+  // 讀取訂單數據
   const orders = readOrdersFromFile();
 
-  //追加新的訂單;
+  // 追加新的訂單
   const newOrder = {
     id: orders.length + 1,
-    items: orderData,
+    items: items,
+    totalPrice: totalPrice,
+    date: new Date().toISOString(),
   };
   orders.push(newOrder);
 
-  //保存更新後的訂單數據
+  // 保存更新後的訂單數據
   writeOrdersToFile(orders);
 
-  res
-    .status(200)
-    .json({ message: "Order received successfully", order: newOrder });
+  // 返回完整的訂單信息
+  res.status(200).json({
+    message: "Order received successfully",
+    order: newOrder,
+  });
+});
+
+//獲取所有訂單
+router.get("/order", (req, res) => {
+  const orders = readOrdersFromFile();
+  res.json(orders);
+});
+
+router.get("/order/:id", (req, res) => {
+  const orders = readOrdersFromFile();
+  const order = orders.find((item) => item.id === parseInt(req.params.id));
+  if (order) {
+    res.json(order);
+  } else {
+    res.status(404).json({ message: "Order not found" });
+  }
 });
 
 //將該路由模組導出，以便在其他文件中引入並使用
