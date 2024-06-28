@@ -1,18 +1,16 @@
-import Col from "react-bootstrap/Col";
-import Nav from "react-bootstrap/Nav";
-import Row from "react-bootstrap/Row";
-import Tab from "react-bootstrap/Tab";
 import MealItem from "../component/MealItem.jsx";
 import Title from "../component/Title.jsx";
-import Cart from "../component/Cart.jsx";
 import axios from "axios";
 import "../styles/Meal.css";
 import "../styles/Cart.css";
 import { useState, useEffect } from "react";
+import OrderModal from "../component/OrderModal.jsx";
 
 const Menu = ({ onAddItemToCart }) => {
   const [menuItems, setMenuItems] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [orderDetails, setOrderDetails] = useState(null);
 
   useEffect(() => {
     const fetchMenuItems = async () => {
@@ -47,8 +45,20 @@ const Menu = ({ onAddItemToCart }) => {
             : cartItem
         )
       );
+      setMenuItems(
+        menuItems.map((menuItem) =>
+          menuItem.id === item.id
+            ? { ...menuItem, quantity: menuItem.quantity + 1 }
+            : menuItem
+        )
+      );
     } else {
       setShoppingCart([...shoppingCart, { ...item, quantity: 1 }]);
+      setMenuItems(
+        menuItems.map((menuItem) =>
+          menuItem.id === item.id ? { ...menuItem, quantity: 1 } : menuItem
+        )
+      );
     }
   }
 
@@ -62,15 +72,25 @@ const Menu = ({ onAddItemToCart }) => {
         )
         .filter((cartItem) => cartItem.quantity > 0);
     });
+    setMenuItems((preMenuItems) => {
+      preMenuItems.map((mealItem) => {
+        mealItem.id === id && mealItem.quantity > 0
+          ? { ...mealItem, quantity: mealItem.quantity - 1 }
+          : mealItem;
+      });
+    });
   }
 
   const handleCheckout = async () => {
     try {
-      const orderData = shoppingCart.map((item) => ({
-        name: item.name,
-        quantity: item.quantity,
-        totalPrice,
-      }));
+      const orderData = {
+        items: shoppingCart.map((item) => ({
+          name: item.name,
+          quantity: item.quantity,
+          price: item.price,
+        })),
+        totalPrice: totalPrice,
+      };
 
       const response = await fetch("http://localhost:3001/api/checkout", {
         method: "POST",
@@ -82,13 +102,21 @@ const Menu = ({ onAddItemToCart }) => {
 
       if (response.ok) {
         const result = await response.json();
-        alert(result.message); // 顯示訂單成功訊息
+        setOrderDetails(result.order);
+        setShowModal(true);
+        // alert(result.message); // 顯示訂單成功訊息
+        console.log("Order details:", result.order);
 
         //清空購物車
         setShoppingCart([]);
 
         // 更新菜單項目的初始數量為零
-        setMenuItems(menuItems.map((item) => ({ ...item, quantity: 0 })));
+        setMenuItems((prevMealItems) =>
+          prevMealItems.map((item) => ({
+            ...item,
+            quantity: 0,
+          }))
+        );
       } else {
         alert("Error during checkout:", response.statusText);
       }
@@ -96,6 +124,10 @@ const Menu = ({ onAddItemToCart }) => {
       console.error("Error during checkout:", error);
       alert("Checkout failed");
     }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   const itemTotals = shoppingCart.map((item) => item.price * item.quantity);
@@ -118,7 +150,7 @@ const Menu = ({ onAddItemToCart }) => {
                 title={item.name}
                 price={item.price}
                 image={item.image}
-                initialQuantity={item.quantity}
+                initialQuantity={item.quantity || 0}
                 onAddToCart={() => handleAddItemToCart(item)}
                 onDecreaseItem={() => handleDecreaseItemToCart(item.id)}
               />
@@ -137,7 +169,7 @@ const Menu = ({ onAddItemToCart }) => {
                   title={item.name}
                   price={item.price}
                   image={item.image}
-                  initialQuantity={item.quantity}
+                  initialQuantity={item.quantity || 0}
                   onAddToCart={() => handleAddItemToCart(item)}
                   onDecreaseItem={() => handleDecreaseItemToCart(item.id)}
                 />
@@ -156,7 +188,6 @@ const Menu = ({ onAddItemToCart }) => {
             <thead className="cart-header">
               <tr>
                 <th className="headerTitle">ID</th>
-
                 <th className="headerTitle">Item</th>
                 <th className="headerQuantity">Quantity</th>
                 <th className="headerAmount">Amount</th>
@@ -175,7 +206,7 @@ const Menu = ({ onAddItemToCart }) => {
                       >
                         -
                       </button>
-                      <span className="ItemQuantity">{item.quantity}</span>
+                      <span className="CartQuantity">{item.quantity}</span>
                       <button
                         className="CartBtn"
                         onClick={() => handleAddItemToCart(item, 1)}
@@ -197,6 +228,13 @@ const Menu = ({ onAddItemToCart }) => {
           <button className="checkoutBtn" onClick={handleCheckout}>
             Check out
           </button>
+        )}
+        {orderDetails && (
+          <OrderModal
+            show={showModal}
+            handleClose={() => setShowModal(false)}
+            orderDetails={orderDetails}
+          />
         )}
       </div>
     </>
