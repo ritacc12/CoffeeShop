@@ -7,26 +7,16 @@ export default function MealItem({
   title,
   price,
   image,
-  initialQuantity, // 從父組件中接收初始數量
+  quantity, // 從父組件中接收初始數量
   onAddToCart,
   onDecreaseItem,
 }) {
-  const [quantity, setQuantity] = useState(initialQuantity || 0); // 初始數量為父組件傳遞的初始值或者0
-
-  useEffect(() => {
-    setQuantity(initialQuantity);
-  }, [initialQuantity]);
-
   const handleAddToCartClick = () => {
-    setQuantity(quantity + 1);
     onAddToCart(); // 呼叫父組件的加入購物車函式
   };
 
   const handleDecreaseItemClick = () => {
-    if (quantity > 0) {
-      setQuantity(quantity - 1);
-      onDecreaseItem(); // 呼叫父組件的減少購物車商品數量函式
-    }
+    onDecreaseItem(); // 呼叫父組件的減少購物車商品數量函式
   };
   return (
     <>
