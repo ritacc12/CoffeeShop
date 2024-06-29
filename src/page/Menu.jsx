@@ -6,7 +6,7 @@ import "../styles/Cart.css";
 import { useState, useEffect } from "react";
 import OrderModal from "../component/OrderModal.jsx";
 
-const Menu = ({ onAddItemToCart }) => {
+const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -34,51 +34,48 @@ const Menu = ({ onAddItemToCart }) => {
   const foods = menuItems.filter((item) => item.category === "food");
 
   function handleAddItemToCart(item) {
+    setMenuItems((prevMenuItems) =>
+      prevMenuItems.map((menuItem) =>
+        menuItem.id === item.id
+          ? { ...menuItem, quantity: (menuItem.quantity || 0) + 1 }
+          : menuItem
+      )
+    );
+
     const existingItem = shoppingCart.find(
       (cartItem) => cartItem.id === item.id
     );
     if (existingItem) {
-      setShoppingCart(
-        shoppingCart.map((cartItem) =>
+      setShoppingCart((prevCart) =>
+        prevCart.map((cartItem) =>
           cartItem.id === item.id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         )
       );
-      setMenuItems(
-        menuItems.map((menuItem) =>
-          menuItem.id === item.id
-            ? { ...menuItem, quantity: menuItem.quantity + 1 }
-            : menuItem
-        )
-      );
     } else {
-      setShoppingCart([...shoppingCart, { ...item, quantity: 1 }]);
-      setMenuItems(
-        menuItems.map((menuItem) =>
-          menuItem.id === item.id ? { ...menuItem, quantity: 1 } : menuItem
-        )
-      );
+      setShoppingCart((prevCart) => [...prevCart, { ...item, quantity: 1 }]);
     }
   }
 
   function handleDecreaseItemToCart(id) {
-    setShoppingCart((prevShoppingCart) => {
-      return prevShoppingCart
+    setMenuItems((prevMenuItems) =>
+      prevMenuItems.map((menuItem) =>
+        menuItem.id === id && menuItem.quantity > 0
+          ? { ...menuItem, quantity: menuItem.quantity - 1 }
+          : menuItem
+      )
+    );
+    setShoppingCart((prevCart) =>
+      prevCart
         .map((cartItem) =>
           cartItem.id === id && cartItem.quantity > 0
             ? { ...cartItem, quantity: cartItem.quantity - 1 }
             : cartItem
         )
-        .filter((cartItem) => cartItem.quantity > 0);
-    });
-    setMenuItems((preMenuItems) => {
-      preMenuItems.map((mealItem) => {
-        mealItem.id === id && mealItem.quantity > 0
-          ? { ...mealItem, quantity: mealItem.quantity - 1 }
-          : mealItem;
-      });
-    });
+        //過濾掉數量變為0的品項，將它們從購物車中移除
+        .filter((cartItem) => cartItem.quantity > 0)
+    );
   }
 
   const handleCheckout = async () => {
@@ -104,7 +101,6 @@ const Menu = ({ onAddItemToCart }) => {
         const result = await response.json();
         setOrderDetails(result.order);
         setShowModal(true);
-        // alert(result.message); // 顯示訂單成功訊息
         console.log("Order details:", result.order);
 
         //清空購物車
@@ -139,7 +135,6 @@ const Menu = ({ onAddItemToCart }) => {
       <Title title="Menu" />
       <div className="Menu">
         <p className="description">Drinks</p>
-        {/* <div className="menuList"> */}
         <div className="CardContainer">
           {menuItems.length === 0 ? (
             <p>Loading menu...</p>
@@ -150,7 +145,7 @@ const Menu = ({ onAddItemToCart }) => {
                 title={item.name}
                 price={item.price}
                 image={item.image}
-                initialQuantity={item.quantity || 0}
+                quantity={item.quantity || 0}
                 onAddToCart={() => handleAddItemToCart(item)}
                 onDecreaseItem={() => handleDecreaseItemToCart(item.id)}
               />
@@ -169,7 +164,7 @@ const Menu = ({ onAddItemToCart }) => {
                   title={item.name}
                   price={item.price}
                   image={item.image}
-                  initialQuantity={item.quantity || 0}
+                  quantity={item.quantity || 0}
                   onAddToCart={() => handleAddItemToCart(item)}
                   onDecreaseItem={() => handleDecreaseItemToCart(item.id)}
                 />
